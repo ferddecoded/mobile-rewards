@@ -40,7 +40,7 @@ const initialState = {
       id: 2,
     },
   ],
-};
+}
 
 export default function points(state = initialState, action) {
   switch (action.type) {

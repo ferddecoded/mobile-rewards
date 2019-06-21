@@ -1,3 +1,5 @@
+import { TOGGLE_FAVORITE_OFFER } from '../actions/offers'
+
 const initialState = [
   {
     brand: 'Amazon',
@@ -25,19 +27,28 @@ const initialState = [
     amount: 9,
     date: '2017-07-01',
     type: 'ongoing',
-    id: 0,
+    id: 3,
   },
   {
     brand: 'Safeway',
     amount: 10000,
     date: '2017-06-03',
     type: 'onetime',
-    id: 1,
+    id: 4,
   },
 ]
 
 export default function offers(state = initialState, action) {
   switch (action.type) {
+    case TOGGLE_FAVORITE_OFFER: {
+      const newState = [...state]
+      const toggleId = action.payload.id
+      const toggledOfferIndex = newState.findIndex((offer) => {
+        return offer.id === toggleId
+      })
+      newState[toggledOfferIndex].favorite = !newState[toggledOfferIndex].favorite
+      return newState
+    }
     default:
       return state
   }

@@ -1,3 +1,5 @@
+import { REDEEM_REWARD } from '../actions/rewards'
+
 const initialState = [
   {
     brand: 'Amazon',
@@ -18,6 +20,15 @@ const initialState = [
 
 export default function rewards(state = initialState, action) {
   switch (action.type) {
+    case REDEEM_REWARD: {
+      const newState = [...state]
+      const redeemedRewardIndex = newState.findIndex((reward) => {
+        return reward.id === action.payload.id
+      })
+      newState[redeemedRewardIndex].redeemed = !newState[redeemedRewardIndex].redeemed
+      newState[redeemedRewardIndex].redeemedDate = action.payload.date
+      return newState
+    }
     default:
       return state
   }

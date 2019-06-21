@@ -2,7 +2,7 @@ import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'
 
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 
@@ -16,13 +16,12 @@ import Rewards from './src/containers/Rewards'
 import points from './src/reducers/points'
 import offers from './src/reducers/offers'
 import rewards from './src/reducers/rewards'
-import tab from './src/reducers/tabs'
 
 import './index.css'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 const store = createStore(
-  combineReducers({ points, offers, rewards, selectedTab: tab }),
+  combineReducers({ points, offers, rewards }),
   composeEnhancers(applyMiddleware(thunk)),
   // added support for redux devtools in the browser
   // for better debugging and checking application state

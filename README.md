@@ -48,6 +48,8 @@ We will be evaluating based on robustness and best coding practices, as well as 
 Consider what they might find most useful or interesting and explain your
 choice.
 
+`explantation:` For the click of the point balance, i decided to expose the available rewards that the user has. Personally, I think this would be the best set of information to expose to the user because I think the user's main interest in the points are the rewards that they can redeem it for.
+
 #### For your next task, I would like you to improve the Offers tab
 
 1. At the moment, the OfferItem component is hard coded within the render
@@ -72,6 +74,8 @@ choice.
 and make something happen when you click. Make the changes to suit the purpose
 of each component and explain your choices.
 
+`explanation:` For the OfferItem component, i decided to include coins in the component as a visual indicator that the offer is related to what they spend. The more they spend on an offer, the more points they will attain. As well, for the click of the offer to favorite, i think exposing a Modal to properly ask if the user wants to favorite the offer is the best outcome, as it gives the user the knowledge of what they're doing and it asks for their permission to do so.
+
 #### For your final task, I would like you to add functionality to the Rewards tab
 
 1. Right now the RewardItem is a bit boring. We would like to add a progress bar
@@ -94,5 +98,7 @@ of each component and explain your choices.
 **BONUS**: Make RewardItem visually distinctive from PointItem and OfferItem.
 Make the changes to suit the purpose of the RewardItem component and explain
 your choice.
+
+`Explanation:` I think the best way to visually differentiate the RewardItem from the other item cards was too show a dollar bill, indicating that the user will receive a reward. Most people will allocate the reward with money, hence conveying the idea that the user will get money (rebates) in return. I also added a 'REDEEMED' badge on the RewardsItem for whenever the rewards has been redeemed.
 
 _Thanks for being a Drop member_ ;)
